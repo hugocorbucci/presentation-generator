@@ -1,15 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'bundler'
 gem 'sqlite3'
-
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'json'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -29,4 +28,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # and rake tasks are available in development mode:
 group :development, :test do
  gem 'rspec'
+ gem 'rspec-rails'
+ gem 'autotest'
+ gem 'autotest-notification'
 end
