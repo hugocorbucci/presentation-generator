@@ -1,5 +1,7 @@
 
 img {
+	max-width: 800px;
+	max-height: 600px;
 }
 div {
 	min-height:600px;
@@ -12,4 +14,7 @@ div {
 }
 .slide {
 	text-align: center;
+}
+.hidden {
+	display:none;
 }

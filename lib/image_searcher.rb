@@ -13,7 +13,11 @@ class ImageSearcher
     response = JSON.parse(resource.body)
     data = response["responseData"]
     results = data["results"]
-    result = results[0]
-    result["url"]
+    unless results.empty?
+      result = results[0]
+      result["url"]
+    else
+      ""
+    end
   end
 end

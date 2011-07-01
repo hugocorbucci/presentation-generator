@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.1.0'
 gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
@@ -9,6 +9,7 @@ gem 'rake', '0.8.7'
 gem 'bundler'
 gem 'sqlite3'
 gem 'json'
+gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -31,4 +32,5 @@ group :development, :test do
  gem 'rspec-rails'
  gem 'autotest'
  gem 'autotest-notification'
+ gem 'heroku'
 end
