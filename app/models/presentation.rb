@@ -5,9 +5,10 @@ class Presentation < ActiveRecord::Base
     super(*params)
     
     searcher = ImageSearcher.new
-    lines = content ? content.split('\n') : []
-    lines.each do |line|
-      slides << Slide.new(searcher, :content => line)
+    unless content.nil?
+      content.each_line do |line|
+        slides << Slide.new(searcher, :content => line)
+      end
     end
   end
 end

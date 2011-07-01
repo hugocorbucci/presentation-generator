@@ -1,0 +1,15 @@
+
+img {
+}
+div {
+	min-height:600px;
+	min-width:800px;
+	
+}
+.slide:hover {
+	background:#eee;
+	
+}
+.slide {
+	text-align: center;
+}

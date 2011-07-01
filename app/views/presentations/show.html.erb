@@ -1,3 +1,7 @@
 <% @presentation.slides.each do |slide| %>
+<div class="slide">
+
+  <h1><%=slide.content%></h1>
   <img src="<%= slide.image %>"></img>
+</div>
 <% end %>
