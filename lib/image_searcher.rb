@@ -7,7 +7,7 @@ class ImageSearcher
   def get_image(words)
     escaped_words = CGI::escape(words)
     #TODO use api_key on config/flickr.yml
-   url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=5170099ef3339caa3f610c7be46723c4&page=1&tags=#{escaped_words}&format=json&nojsoncallback=1"
+   url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=5170099ef3339caa3f610c7be46723c4&page=1&per_page=1&tags=#{escaped_words}&format=json&nojsoncallback=1"
    #http://www.flickr.com/services/api/flickr.photos.search.html
     resource = Net::HTTP.get_response(URI.parse(url))
     response = JSON.parse(resource.body)
