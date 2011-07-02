@@ -17,6 +17,9 @@ describe Presentation do
   
   context "with one line content" do
     before :each do
+      engine = mock(ImageSearcher)
+      engine.should_receive(:get_image).and_return("http://www.image.com/image.png")
+      ImageSearcher.should_receive(:engine).and_return(engine)
       @presentation = Presentation.new(:content => "silver bullet")
     end
     

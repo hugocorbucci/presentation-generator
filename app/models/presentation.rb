@@ -4,7 +4,7 @@ class Presentation < ActiveRecord::Base
   def initialize(*params)
     super(*params)
     
-    searcher = ImageSearcher.new
+    searcher = ImageSearcher.engine("flickr")
     unless content.nil?
       content.each_line do |line|
         slides << Slide.new(searcher, :content => line)
