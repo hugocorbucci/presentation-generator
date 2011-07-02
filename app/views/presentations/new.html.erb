@@ -1,5 +1,13 @@
-<%= form_for @presentation do |f| %>
-  <%= f.text_area :content %> <br/>
-  
-  <%= f.submit %>
-<% end %>
+<section class="main">
+  <h1>Presentation Generator</h1>
+  <span class="hint">Write down your presentation. Objective sentences are the best ones!</span>
+
+  <%= form_for @presentation do |f| %>
+    <%= f.text_area :content, :class => 'presentation'%> <br/>
+    <br /> 
+  <button class="rounded">
+    <span>Create it!</span>
+  </button>
+            
+  <% end %>
+</section>
