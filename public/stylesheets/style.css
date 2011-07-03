@@ -18,3 +18,75 @@ div {
 .hidden {
 	display:none;
 }
+
+.hint {
+  color: #999;
+  font: 17px arial,sans-serif;
+}
+
+section.main {
+  text-align: center;
+}
+
+section.main h1 {
+ font: 20px arial,sans-serif;
+ font-weight: bold;
+
+}
+
+textarea.presentation {
+  -moz-box-sizing: content-box;
+  background: white;
+  border-top: 1px solid silver;
+  color: black;
+  font: 17px arial,sans-serif;
+  padding: 1px 7px;
+  line-height: 25px!important;
+  vertical-align: top;
+  width: 60%;
+}
+
+
+button {
+  border: 0 none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 15px 0 0;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  width: auto;
+}
+
+button.rounded {
+  background: transparent url( ../images/btn_right.png ) no-repeat scroll right top;
+  clear: left;
+  font-size: 0.8em;
+}
+
+button span {
+  display: block;
+  padding: 0 0 0 15px;
+  position: relative;
+  white-space: nowrap;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+button.rounded span {
+  background: transparent url( ../images/btn_left.png ) no-repeat scroll left top;
+  color: #FFFFFF;
+}
+
+button.rounded:hover {
+background-position: 100% -30px;
+}
+
+button.rounded:hover span {
+background-position: 0% -30px;
+}
+
+button::-moz-focus-inner {
+border: none;
+}
