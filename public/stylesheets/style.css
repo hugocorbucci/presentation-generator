@@ -1,20 +1,22 @@
-
 img {
 	max-width: 800px;
 	max-height: 600px;
 }
+
 div {
 	min-height:600px;
 	min-width:800px;
 	
 }
+
 .slide:hover {
-	background:#eee;
-	
+	background:#eee;	
 }
+
 .slide {
 	text-align: center;
 }
+
 .hidden {
 	display:none;
 }
@@ -29,9 +31,8 @@ section.main {
 }
 
 section.main h1 {
- font: 20px arial,sans-serif;
- font-weight: bold;
-
+	font: 20px arial,sans-serif;
+	font-weight: bold;
 }
 
 textarea.presentation {
@@ -45,7 +46,6 @@ textarea.presentation {
   vertical-align: top;
   width: 60%;
 }
-
 
 button {
   border: 0 none;
@@ -80,13 +80,13 @@ button.rounded span {
 }
 
 button.rounded:hover {
-background-position: 100% -30px;
+	background-position: 100% -30px;
 }
 
 button.rounded:hover span {
-background-position: 0% -30px;
+	background-position: 0% -30px;
 }
 
 button::-moz-focus-inner {
-border: none;
+	border: none;
 }

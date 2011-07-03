@@ -1,6 +1,7 @@
 <% @presentation.slides.each_with_index do |slide, index| %>
   <% unless slide.image.blank? %>
     <div class="slide">
+      <!-- TODO Improve UX by allowing clicks to pass slide. Must degrade gracefully -->
       <h1><%=slide.content%></h1>
       <img src="<%= slide.image %>"></img>
     </div>
@@ -8,27 +9,39 @@
 <% end %>
 
 <script>
-  $(document).keypress(function(e){
-      if (e.keyCode == 37) { 
-         var current = $(".slide:visible");
-         var previous = current.prev('.slide');
-         if(previous.length) {
-           previous.show();
-           current.hide();
-         }
-         return false;
-      } else if (e.keyCode == 39) { 
-        var current = $(".slide:visible");
-        var next = current.next('.slide');
-        if(next.length) {
-          next.show();
-          current.hide();
-        }
-        return false;
-      }
+  function changeTo(retriever) {
+    var current = $(".slide:visible");
+    var target = retriever(current);
+    console.log(target);
+    if(target.length) {
+      current.hide();
+      target.show();
+    }
+    return false;
+  };
+  $(document).keydown(function(e){
+    if (e.which == 38) { 
+      return changeTo(function(slide) {
+        return $(".slide:first");
+      });
+    }
+    else if (e.which == 40) { 
+      return changeTo(function(slide) {
+        return $(".slide:last");
+      });
+    }
+    else if (e.which == 37) { 
+      return changeTo(function(slide) {
+        return slide.prev('.slide');
+      });
+    } else if (e.which == 39) { 
+      return changeTo(function(slide) {
+        return slide.next('.slide');
+      });
+    }
   });
   $(function() {
     $(".slide").hide();
     $(".slide:first-child").show();
-  })
+  });
 </script>
