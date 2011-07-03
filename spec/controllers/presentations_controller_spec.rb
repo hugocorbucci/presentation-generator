@@ -14,8 +14,8 @@ describe PresentationsController do
   
   it "create action should redirect to show" do
     searcher = mock(ImageSearcher)
-    ImageSearcher.should_receive(:new).and_return(searcher)
-    searcher.should_receive(:get_image).and_return("http://dont-tread-on.me/wp-content/uploads/2011/02/silver-bullet9.jpg")
+    searcher.should_receive(:get_image).and_return("http://www.image.com/image.png")
+    ImageSearcher.should_receive(:engine).and_return(searcher)
     presentation = Presentation.new(:content => "silver bullet")
     Presentation.should_receive(:new).and_return(presentation)
     post :create, :presentation  => { :content => "silver bullet" }
@@ -24,6 +24,7 @@ describe PresentationsController do
   
   it "show action should have presentation with id assigned" do
     presentation = Presentation.new(:content => "silver bullet")
+    presentation.stub(:get_image).and_return("http://image.com/image.png")
     Presentation.should_receive(:find).with(1).and_return(presentation)
     get :show, :id  => 1
     assigns(:presentation).should_not be_nil
