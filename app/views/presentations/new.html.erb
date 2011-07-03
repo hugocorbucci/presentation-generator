@@ -5,9 +5,51 @@
   <%= form_for @presentation do |f| %>
     <%= f.text_area :content, :class => 'presentation'%> <br/>
     <br /> 
-  <button class="rounded">
-    <span>Create it!</span>
-  </button>
-            
+
+    <button class="rounded">
+      <span>Create it!</span>
+    </button>            
   <% end %>
+  <hr/>
 </section>
+
+<script>
+  $('#presentation_content').keypress(function(e) {
+    console.log(e);
+    if(e.keyCode == 8 || e.keyCode == 46 || e.which > 0) {
+      console.log("update");
+      update_preview($(e.currentTarget));
+      return undefined;
+    } 
+  });
+  $('#presentation_content').blur(function(e) {
+    update_preview($(e.currentTarget));
+  });
+  
+  function update_preview(target) {
+    var newValue = target.val();
+    // FIXME Ajax call to obtain the slides
+    var slides = new Array();
+    for(var i = 0; i < lineCount(newValue); i++) {
+      slides.push(["Agile Brazil " + (2010 + i), "/images/btn_left.png"]);
+    }
+    ajax_callback(slides);
+    // FIXME Bug on Firefox will add text to the end if DOM is manipulated
+    // FIXME Non-FF do not send keypress events for delete/backspace
+  }
+  
+  function lineCount(value) {
+    return value.split('\n').length;
+  }
+  
+  function ajax_callback(slides) {
+    insert_presentation(slides);
+    $('.slide').hide();
+    $('.slide:first-child').show();
+  }
+  
+  $(function() {
+    $("#presentation_content").focus();
+    update_preview($("#presentation_content"));
+  });
+</script>

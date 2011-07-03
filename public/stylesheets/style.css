@@ -1,31 +1,3 @@
-img {
-	max-width: 800px;
-	max-height: 600px;
-}
-
-div {
-	min-height:600px;
-	min-width:800px;
-	
-}
-
-.slide:hover {
-	background:#eee;	
-}
-
-.slide {
-	text-align: center;
-}
-
-.hidden {
-	display:none;
-}
-
-.hint {
-  color: #999;
-  font: 17px arial,sans-serif;
-}
-
 section.main {
   text-align: center;
 }
@@ -35,8 +7,13 @@ section.main h1 {
 	font-weight: bold;
 }
 
+section.main span.hint {
+  color: #999;
+  font: 17px arial,sans-serif;
+}
+
 textarea.presentation {
-  -moz-box-sizing: content-box;
+	height: 150px;
   background: white;
   border-top: 1px solid silver;
   color: black;
@@ -90,3 +67,46 @@ button.rounded:hover span {
 button::-moz-focus-inner {
 	border: none;
 }
+
+div#tumb {
+	float:left;
+	text-align: left;
+	border-right: 1px solid silver;
+	width: 200px;
+}
+div#tumb div.tumb {
+	height: 120px;
+}
+div#tumb div.tumb div.tumb_slide {
+	border: 1px solid black;
+	float: right;
+	width: 150px;
+	height: 100px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+div#tumb div.tumb div.tumb_slide img {
+	max-width: 150px;
+	max-height: 100px;
+}
+
+div#slides img {
+	max-width: 800px;
+	max-height: 600px;
+}
+
+div#slides div.slide {
+	min-height:600px;
+	min-width:800px;	
+}
+
+div#slides div.slide:hover {
+	background:#eee;	
+}
+
+div#slides div.slide {
+	text-align: center;
+	margin-left: 200px;
+}
+

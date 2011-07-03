@@ -1,24 +1,16 @@
-<% @presentation.slides.each_with_index do |slide, index| %>
-  <% unless slide.image.blank? %>
-    <div class="slide">
-      <!-- TODO Improve UX by allowing clicks to pass slide. Must degrade gracefully -->
-      <h1><%=slide.content%></h1>
-      <img src="<%= slide.image %>"></img>
-    </div>
+<section class="main">
+  <% @presentation.slides.each_with_index do |slide, index| %>
+    <% unless slide.image.blank? %>
+      <div class="slide">
+        <!-- TODO Improve UX by allowing clicks to pass slide. Must degrade gracefully -->
+        <h1><%=slide.content%></h1>
+        <img src="<%= slide.image %>" alt="<%=slide.content%>"></img>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</section>
 
 <script>
-  function changeTo(retriever) {
-    var current = $(".slide:visible");
-    var target = retriever(current);
-    console.log(target);
-    if(target.length) {
-      current.hide();
-      target.show();
-    }
-    return false;
-  };
   $(document).keydown(function(e){
     if (e.which == 38) { 
       return changeTo(function(slide) {
