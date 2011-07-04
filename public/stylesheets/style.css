@@ -4,14 +4,27 @@ img {
 div {
 	min-height:600px;
 	min-width:800px;
-	
 }
+
+.slide h1 {
+  top:450px;
+  text-size: 20px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
 .slide:hover {
 	background:#eee;
 	
 }
 .slide {
+    display:none;
 	text-align: center;
+}
+
+.slide img {
+  min-width: 500px;
+  max-height: 600px;
 }
 
 .hint {
