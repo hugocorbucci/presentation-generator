@@ -1,7 +1,28 @@
-<% @presentation.slides.each do |slide| %>
-<div class="slide">
+<section class="main">
+<% @presentation.slides.each_with_index do | slide, i| %>
+  <div class="slide" id="s<%=i%>">
 
   <h1><%=slide.content%></h1>
-  <img src="<%= slide.image %>"></img>
+  <img src="<%= slide.image %>" ></img>
 </div>
 <% end %>
+</section>
+
+<script>
+  $('#s0').fadeIn();
+  var current = 0;
+    $(document).keydown(function(event){
+      if(event.which == 40 || event.which == 39) {
+        change_slide(1); 
+      } else if (event.which == 37 || event.which == 38){
+        if(current > 0)
+          change_slide(-1);
+      }
+    });
+
+    function change_slide(offset) {
+        $('#s'+current).hide();
+        current = current + offset;
+        $('#s'+current).fadeIn();
+    }
+</script>
