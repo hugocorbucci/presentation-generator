@@ -14,28 +14,42 @@
 </section>
 
 <script>
-  $('#presentation_content').keypress(function(e) {
-    console.log(e);
-    if(e.keyCode == 8 || e.keyCode == 46 || e.which > 0) {
-      console.log("update");
-      update_preview($(e.currentTarget));
-      return undefined;
-    } 
-  });
-  $('#presentation_content').blur(function(e) {
-    update_preview($(e.currentTarget));
-  });
-  
   function update_preview(target) {
     var newValue = target.val();
-    // FIXME Ajax call to obtain the slides
-    var slides = new Array();
-    for(var i = 0; i < lineCount(newValue); i++) {
-      slides.push(["Agile Brazil " + (2010 + i), "/images/btn_left.png"]);
-    }
-    ajax_callback(slides);
+    $.ajax({
+       type: "POST",
+       url: "/presentations.js",
+       data: {presentation :  {content : newValue}},
+       success: function(msg) { json = JSON.parse(msg); ajax_callback(json); }
+     });
     // FIXME Bug on Firefox will add text to the end if DOM is manipulated
     // FIXME Non-FF do not send keypress events for delete/backspace
+  }
+  
+  function addTextAreaCallback(textArea, delay) {
+    var timer = null;
+    textArea.keypress(function(e) {
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+      timer = window.setTimeout(function(){ timer = null; update_preview(textArea);}, delay);
+      selectCurrentLine(textArea);
+    });
+  }
+  
+  function currentLine(area) {
+    var value = area.val();
+    var lines = value.split('\n');
+    var selection = area[0].selectionStart;
+    var offset = 0;
+    for(var i = 0; i < lines.length; i++) {
+      if(offset + lines[i].length + 1 < selection) {
+        offset += lines[i].length + 1;
+      } else {
+        return i;
+      }
+    }
+    return lines.length - 1;
   }
   
   function lineCount(value) {
@@ -45,11 +59,20 @@
   function ajax_callback(slides) {
     insert_presentation(slides);
     $('.slide').hide();
-    $('.slide:first-child').show();
+    selectCurrentLine($("#presentation_content"));
+  }
+  
+  function selectCurrentLine(area) {
+    changeTo(function(current) {
+      var line = currentLine(area);
+      return $($(".slide")[line]);
+    });
   }
   
   $(function() {
-    $("#presentation_content").focus();
-    update_preview($("#presentation_content"));
+    var content = $("#presentation_content");
+    content.focus();
+    update_preview(content);
+    addTextAreaCallback(content, 500);
   });
 </script>
