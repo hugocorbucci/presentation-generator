@@ -1,0 +1,20 @@
+defaults: &defaults
+  host: localhost
+  port: 27017
+
+development:
+  <<: *defaults
+  database: pcreator
+
+test:
+  <<: *defaults
+  database: pcreator_test
+
+production:
+  host: staff.mongohq.com
+  port: 27017
+  database: presentation_creator
+  username: pcreator
+  password: secret
+
+
