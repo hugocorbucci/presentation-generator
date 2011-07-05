@@ -1,3 +1,13 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+div#maincontainer {
+	width: 1000px;
+	margin: 0 auto;
+}
+
 section.main {
   text-align: center;
 }
@@ -8,12 +18,17 @@ section.main h1 {
 }
 
 section.main span.hint {
+	float: left;
+	text-align: left;
+	width: 180px;
   color: #999;
   font: 17px arial,sans-serif;
 }
 
 textarea.presentation {
-	height: 150px;
+	margin-left: -190px;
+	width: 600px;
+	height: 100px;
   background: white;
   border-top: 1px solid silver;
   color: black;
@@ -21,10 +36,11 @@ textarea.presentation {
   padding: 1px 7px;
   line-height: 25px!important;
   vertical-align: top;
-  width: 60%;
 }
 
 button {
+	float: right;
+	margin-top: -60px;
   border: 0 none;
   cursor: pointer;
   font-weight: bold;
@@ -32,7 +48,7 @@ button {
   text-align: center;
   height: 30px;
   line-height: 30px;
-  width: auto;
+	width: auto;
 }
 
 button.rounded {
@@ -68,11 +84,19 @@ button::-moz-focus-inner {
 	border: none;
 }
 
+div#presentation {
+	float: left;
+	width: 100%;
+	border-top: 3px solid silver;
+	padding-top: 5px;
+}
+
 div#tumb {
 	float:left;
 	text-align: left;
 	border-right: 1px solid silver;
-	width: 200px;
+	width: 180px;
+	margin-left: -1000px;
 }
 div#tumb div.tumb {
 	height: 120px;
@@ -84,6 +108,7 @@ div#tumb div.tumb div.tumb_slide {
 	height: 100px;
 	margin-right: 5px;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 div#tumb div.tumb div.tumb_slide img {
@@ -91,22 +116,44 @@ div#tumb div.tumb div.tumb_slide img {
 	max-height: 100px;
 }
 
-div#slides img {
-	max-width: 800px;
-	max-height: 600px;
-}
-
-div#slides div.slide {
-	min-height:600px;
-	min-width:800px;	
-}
-
-div#slides div.slide:hover {
-	background:#eee;	
-}
-
-div#slides div.slide {
-	text-align: center;
+div#presentation div#slides {
 	margin-left: 200px;
 }
+
+div#presentation div#slides div.slide {
+	margin-left: 0;
+}
+
+div.slide {
+	float: left;
+	margin-left: 100px;
+	width: 800px;
+	height: 600px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+div.slide:hover {
+	background:#eee;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+div.slide img {
+	max-width: 800px;
+	max-height: 600px;
+	clear:none;
+}
+
+div.slide h1 {
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+	margin-top: 10pt;
+	font-size: 40pt;
+	background: white;
+	padding: 5pt;
+	border: 3px solid silver;
+}
+
 

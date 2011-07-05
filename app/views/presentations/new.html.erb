@@ -1,8 +1,7 @@
 <section class="main">
   <h1>Presentation Generator</h1>
-  <span class="hint">Write down your presentation. Objective sentences are the best ones!</span>
-
   <%= form_for @presentation do |f| %>
+    <span class="hint">Write down your presentation.<br/>Keywords alone give the best results!</span>
     <%= f.text_area :content, :class => 'presentation'%> <br/>
     <br /> 
 
@@ -10,7 +9,6 @@
       <span>Create it!</span>
     </button>            
   <% end %>
-  <hr/>
 </section>
 
 <script>
