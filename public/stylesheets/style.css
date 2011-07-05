@@ -139,21 +139,14 @@ div.slide:hover {
 	background-position: center center;
 }
 
-div.slide img {
-	max-width: 800px;
-	max-height: 600px;
-	clear:none;
-}
-
 div.slide h1 {
 	position: relative;
 	margin: 0 auto;
 	z-index: 1;
 	margin-top: 10pt;
 	font-size: 40pt;
-	background: white;
+	background: rgba(255,255,255,0.5);
 	padding: 5pt;
 	border: 3px solid silver;
 }
-
 
