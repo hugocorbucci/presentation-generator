@@ -59,7 +59,7 @@ function changeTo(retriever) {
 	var target = retriever(current);
 	if(target.length) {
 		current.hide();
-		target.show();
+		target.fadeIn();
 	}
 	return false;
 };

@@ -34,8 +34,11 @@ GEM
       ZenTest (>= 4.4.1)
     autotest-notification (2.3.1)
       autotest (~> 4.3)
+    bson (1.3.1)
+    bson_ext (1.3.1)
     builder (2.1.2)
     configuration (1.3.1)
+    database_cleaner (0.6.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -57,6 +60,16 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mongo (1.3.1)
+      bson (>= 1.3.1)
+    mongo_ext (0.19.3)
+    mongoid (2.0.2)
+      activemodel (~> 3.0)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
+    mongoid-rspec (1.4.4)
+      mongoid (~> 2.0)
+      rspec (~> 2)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -107,10 +120,15 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-notification
+  bson_ext (~> 1.3)
   bundler
+  database_cleaner
   heroku
   jquery-rails
   json
+  mongo_ext
+  mongoid (~> 2.0)
+  mongoid-rspec
   rails (= 3.0.7)
   rake (= 0.8.7)
   rspec

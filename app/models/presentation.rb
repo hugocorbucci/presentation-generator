@@ -1,5 +1,10 @@
-class Presentation < ActiveRecord::Base
-  has_many :slides
+class Presentation
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  
+  embeds_many :slides
+  
+  field :content
   
   def initialize(*params)
     super(*params)

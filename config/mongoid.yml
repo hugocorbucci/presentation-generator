@@ -1,0 +1,25 @@
+defaults: &defaults
+  host: localhost
+  port: 27017 #<%= ENV['MONGOID_PORT'] %>
+#  skip_version_check: true
+
+development:
+  <<: *defaults
+  host: localhost
+  database: pcreator
+
+
+test:
+  <<: *defaults
+  database: pcreator_test #<%= ENV['MONGOID_DATABASE'] %>
+
+# set these environment variables on your prod server
+production:
+  <<: *defaults
+  host: staff.mongohq.com
+  port: 10031 
+  username: pcreator 
+  password: creator123 
+  database: presentation_creator 
+
+

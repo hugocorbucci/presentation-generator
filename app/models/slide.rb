@@ -1,4 +1,11 @@
-class Slide < ActiveRecord::Base
+class Slide
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+  field :image
+  
+  embedded_in :presentation, :inverse_of => :slides
+  
   def initialize(searcher, *params)
     super(*params)
     
