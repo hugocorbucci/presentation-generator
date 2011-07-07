@@ -7,8 +7,8 @@ function insert_presentation(slides) {
 		create_slide(slides_div, i, slides[i]);
 	}
 	
-	presentation_div.appendChild(slides_div);
 	presentation_div.appendChild(tumb_div);
+	presentation_div.appendChild(slides_div);
 	$('#presentation').remove();
 	$('.main').append(presentation_div);
 }
@@ -61,3 +61,7 @@ function changeTo(retriever) {
 	}
 	return false;
 };
+
+function isChecked(selector) {
+	return $(selector).attr('checked');
+}

@@ -51,6 +51,11 @@ button {
 	width: auto;
 }
 
+#presentation_preview {
+	float: right;
+	margin-top: -120px;
+}
+
 button.rounded {
   background: transparent url( ../images/btn_right.png ) no-repeat scroll right top;
   clear: left;
@@ -96,7 +101,6 @@ div#tumb {
 	text-align: left;
 	border-right: 1px solid silver;
 	width: 180px;
-	margin-left: -1000px;
 }
 div#tumb div.tumb {
 	height: 120px;
