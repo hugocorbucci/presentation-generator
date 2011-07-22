@@ -102,10 +102,10 @@ div#tumb {
 	border-right: 1px solid silver;
 	width: 180px;
 }
-div#tumb div.tumb {
+div.tumb {
 	height: 120px;
 }
-div#tumb div.tumb div.tumb_slide {
+div.tumb_slide {
 	border: 1px solid black;
 	float: right;
 	width: 150px;
@@ -115,7 +115,7 @@ div#tumb div.tumb div.tumb_slide {
 	text-align: center;
 }
 
-div#tumb div.tumb div.tumb_slide img {
+div.tumb_slide img {
 	max-width: 150px;
 	max-height: 100px;
 }
@@ -154,3 +154,30 @@ div.slide h1 {
 	border: 3px solid silver;
 }
 
+table {
+	width: 100%;
+}
+
+table tr td {
+	border-top: 1px solid silver;
+	padding: 3px 0;
+}
+
+div.index_preview {
+	border: 1px solid black;
+	float: left;
+	width: 150px;
+	height: 100px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+div.continue {
+	border:0;
+}
+
+div.index_preview img {
+	max-width: 150px;
+	max-height: 100px;
+}

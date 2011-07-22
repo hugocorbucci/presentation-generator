@@ -3,6 +3,10 @@ class PresentationsController < ApplicationController
     @presentation = Presentation.new(params[:presentation])
   end
   
+  def index
+    @presentations = Presentation.all
+  end
+  
   def create
     @presentation = Presentation.new(params[:presentation])
     respond_to do |format|
