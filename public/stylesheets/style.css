@@ -4,7 +4,7 @@ html,body {
 }
 
 div#maincontainer {
-	width: 1000px;
+	width: 600px;
 	margin: 0 auto;
 }
 
@@ -40,7 +40,7 @@ textarea.presentation {
 
 textarea.ignite {
 	margin-left: -190px;
-	width: 600px;
+	width: 300px;
 	height: 500px;
   background: white;
   border-top: 1px solid silver;
