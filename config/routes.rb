@@ -1,6 +1,7 @@
 PresentationGenerator::Application.routes.draw do
-  root :to => "presentations#new"
+  root :to => "ignites#new"
   
+  resources :ignites
   resources :presentations
 
   # Sample of regular route:

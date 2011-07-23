@@ -1,0 +1,13 @@
+<section class="main">
+  <h1>Ingite Generator</h1>
+  <%= form_for @ignite do |f| %>
+    <span class="hint">Write down your ignite.<br/>20 lines for 20 slides!</span>
+    <%= f.text_area :content, :class => 'presentation'%> <br/>
+    <br /> 
+
+    <button class="rounded" type="submit">
+      <span>Create it!</span>
+    </button>
+  <% end %>
+</section>
+

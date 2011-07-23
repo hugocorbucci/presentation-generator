@@ -1,0 +1,44 @@
+<section class="main">
+  <% @ignite.slides.each_with_index do |slide, index| %>
+    <% unless slide.image.blank? %>
+      <div class="slide" style="background: url(<%= slide.image %>) no-repeat center center;">
+        <h1><%=slide.content%></h1>
+        <!-- TODO Improve UX by allowing clicks to pass slide. Must degrade gracefully -->
+      </div>
+    <% end %>
+  <% end %>
+</section>
+
+<script>
+  var comecou = false;
+  
+  function ignite() {
+    if(!comecou) {
+      alert("Clique OK para começar");
+      comecou = true;
+    }
+    setTimeout("callIgnite()", 15000);
+  }
+  
+  function callIgnite() {
+    var changed = false;
+    changeTo(function(slide) {
+      slide = slide.next('.slide');
+      changed = slide.length;
+      return slide;
+    })
+    if(changed) {
+      ignite(); 
+    }
+    else {
+      alert("ACABOU!\nPalmas!");
+    }
+  }
+  
+  $(function() {
+    $(".slide").hide();
+    $(".slide:first-child").fadeIn();
+    
+    ignite();
+  });
+</script>

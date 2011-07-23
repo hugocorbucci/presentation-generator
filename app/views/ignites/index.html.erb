@@ -1,0 +1,29 @@
+<section class="main">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Slides</th>
+      <th>Created at</th>
+    </tr>
+  <% @ignites.reverse.each do |ignite| %>
+    <tr>
+      <td>
+        <%= link_to ignite.id, ignite_path(ignite) %>
+      </td>
+      <td>
+        <% ignite.slides[0..2].each do |slide| %>
+          <div class="index_preview">
+            <img src="<%= slide.image %>" alt="<%= slide.content %>" />
+          </div>
+        <% end %>
+        <div class="index_preview continue">
+          ...
+        </div>
+      </td>
+      <td>
+        <%= l(ignite.created_at, :format => :short) %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</section>
