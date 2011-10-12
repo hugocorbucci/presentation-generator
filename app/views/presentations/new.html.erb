@@ -1,13 +1,13 @@
 <section class="main">
   <h1>Presentation Generator</h1>
   <%= form_for @presentation do |f| %>
-    <span class="hint">Write down your presentation.<br/>Keywords alone give the best results!</span>
-    <%= f.text_area :content, :class => 'presentation'%> <br/>
-    <br /> 
-
-    <button id="presentation_preview" class="rounded" name="presentation[preview]" value="true" type="submit">
-      <span>Preview it!</span>
-    </button>
+    <p class="hint">
+      Write down one line (sentence or key words) for each slide. Once you are done, click 'Create it'.
+      <span id='effect'>A slide with a related image will appear for each line.</span>
+    </p>
+    <div class="form">
+      <%= f.text_area :content, :class => 'presentation'%> <br/>      
+    </div>
         
     <button class="rounded" type="submit">
       <span>Create it!</span>
@@ -37,6 +37,12 @@
 </section>
 
 <script>
+	$(document).ready(function() {
+	  $('#presentation_content').before('<button id="presentation_preview" class="rounded" name="presentation[preview]" value="true" type="submit"><span>Preview it!</span></button>');
+    $('#effect').empty();
+    $('#effect').append('A slide with a related image will appear for each line. Use the arrow keys to navigate');
+	});
+
   function update_preview(target) {
     if(isChecked('#presentation_preview > input')) {
       var newValue = target.val();

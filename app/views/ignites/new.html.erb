@@ -1,9 +1,18 @@
 <section class="main">
   <h1>Ignite Generator</h1>
   <%= form_for @ignite do |f| %>
-    <span class="hint">Write down your ignite.<br/>20 lines for 20 slides!</span>
-    <%= f.text_area :content, :class => 'ignite'%> <br/>
-    <br /> 
+    <p class="hint">
+      Write down one line (sentence or key words) for each slide. Once you are done, click 'Create it'.
+      <span id='effect'>A related random image will appear for each line.</span>
+    </p>
+    <div class="form">
+      <ul class="hint">
+        <% (1..20).each do |i| %>
+          <li><%= i %>.</li>
+        <% end %>
+      </ul>
+      <%= f.text_area :content, :class => 'ignite'%> <br/>
+    </div>
 
     <button class="rounded" type="submit">
       <span>Create it!</span>
@@ -11,3 +20,9 @@
   <% end %>
 </section>
 
+<script>
+  $(document).ready(function() {
+    $('#effect').empty();
+    $('#effect').append('A related random image will appear for each line for 15 secs.');
+  });
+</script>

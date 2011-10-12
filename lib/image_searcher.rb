@@ -30,12 +30,12 @@ end
 
 class Randomizer < ImageSearcher
   def initialize(searcher)
-    @index = rand(100)
     @searcher = searcher
   end
   
   def get_image(words)
-    @searcher.get_image(words, @index)
+    index = rand(100)
+    @searcher.get_image(words, index)
   end
 end
 

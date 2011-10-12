@@ -17,18 +17,16 @@ section.main h1 {
 	font-weight: bold;
 }
 
-section.main span.hint {
-	float: left;
+section.main p.hint {
+	display: block;
 	text-align: left;
-	width: 180px;
   color: #999;
   font: 17px arial,sans-serif;
 }
 
-textarea.presentation {
-	margin-left: -190px;
-	width: 600px;
-	height: 100px;
+div.form textarea.presentation {
+	width: 400px;
+	height: 200px;
   background: white;
   border-top: 1px solid silver;
   color: black;
@@ -38,22 +36,42 @@ textarea.presentation {
   vertical-align: top;
 }
 
-textarea.ignite {
-	margin-left: -190px;
-	width: 300px;
+div.form {
+	text-align: left;
+  line-height: 25px!important;
+  vertical-align: top;
+}
+
+div.form textarea.ignite {
+	width: 400px;
 	height: 500px;
   background: white;
   border-top: 1px solid silver;
+  border-right: 2px solid gray;
   color: black;
   font: 17px arial,sans-serif;
   padding: 1px 7px;
   line-height: 25px!important;
   vertical-align: top;
+}
+
+div.form ul.hint {
+	float: left;
+	list-style-type:none;
+	padding: 1px 7px;
+	margin-top: 0px;
+}
+
+div.form ul.hint li {
+	color: #999;
+  line-height: 25px!important;
+  font: 17px arial,sans-serif;
+	text-align: right;
 }
 
 button {
 	float: right;
-	margin-top: -60px;
+	margin-top: -50px;
   border: 0 none;
   cursor: pointer;
   font-weight: bold;
@@ -66,7 +84,8 @@ button {
 
 #presentation_preview {
 	float: right;
-	margin-top: -120px;
+	margin-top: -3	0px;
+  font: 17px arial,sans-serif;
 }
 
 button.rounded {
@@ -104,7 +123,7 @@ button::-moz-focus-inner {
 
 div#presentation {
 	float: left;
-	width: 100%;
+	margin-left: -200px;
 	border-top: 3px solid silver;
 	padding-top: 5px;
 }
