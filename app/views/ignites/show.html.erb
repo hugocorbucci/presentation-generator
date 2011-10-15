@@ -1,5 +1,10 @@
+
+<%content_for :head do%>
+    <meta property="og:image" content="<%= @ignite.slides.first.image %>"/>
+<%end%>
+
 <section class="main">
-  <img src="<%= @ignite.slides.first.image %>" style="display:none;"/>
+
   <% @ignite.slides.each_with_index do |slide, index| %>
     <% unless slide.image.blank? %>
       <div class="slide" style="background: url(<%= slide.image %>) no-repeat center center;">
