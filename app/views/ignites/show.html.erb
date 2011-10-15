@@ -7,6 +7,7 @@
       </div>
     <% end %>
   <% end %>
+  <%= render :partial => 'last_slide' %>
 </section>
 
 <script>
@@ -29,9 +30,6 @@
     })
     if(changed) {
       ignite(); 
-    }
-    else {
-      alert("ACABOU!\nPalmas!");
     }
   }
   
