@@ -1,4 +1,5 @@
 <section class="main">
+  <img src="<%= @ignite.slides.first.image %>" style="display:none;"/>
   <% @ignite.slides.each_with_index do |slide, index| %>
     <% unless slide.image.blank? %>
       <div class="slide" style="background: url(<%= slide.image %>) no-repeat center center;">
