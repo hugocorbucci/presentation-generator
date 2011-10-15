@@ -3,6 +3,10 @@
     <meta property="og:image" content="<%= @ignite.slides.first.image %>"/>
 <%end%>
 
+<% content_for :title do%>
+    <%=@ignite.slides.first.content%>
+<%end%>
+
 <section class="main">
 
   <% @ignite.slides.each_with_index do |slide, index| %>
