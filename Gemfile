@@ -9,7 +9,6 @@ gem 'bson_ext', "~> 1.3"
 gem 'mongo_ext'
 
 gem 'bundler'
-gem 'sqlite3'
 gem 'json'
 gem 'jquery-rails'
 gem 'newrelic_rpm'
@@ -23,4 +22,5 @@ group :development, :test do
  gem 'database_cleaner'
  gem 'mongoid-rspec'
  gem 'foreman'
+ gem 'sqlite3'
 end
