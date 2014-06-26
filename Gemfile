@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
+ruby '1.9.3'
 
-gem 'rails', '3.0.20'
-gem 'rake', '0.8.7'
+gem 'rails', '3.2.18'
+gem 'rake', '10.3.2'
 
 gem 'mongoid', "~> 2.0"
 gem 'bson_ext', "~> 1.3"
@@ -11,9 +12,7 @@ gem 'bundler'
 gem 'sqlite3'
 gem 'json'
 gem 'jquery-rails'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
-
+gem 'newrelic_rpm'
 
 group :development, :test do
  gem 'rspec'
@@ -23,4 +22,5 @@ group :development, :test do
  gem 'heroku'
  gem 'database_cleaner'
  gem 'mongoid-rspec'
+ gem 'foreman'
 end

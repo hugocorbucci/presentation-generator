@@ -1,5 +1,5 @@
-require 'spec_helper'
-require 'lib/image_searcher'
+require File.join(File.expand_path(File.dirname(__FILE__)), '../spec_helper')
+require File.join(File.expand_path(File.dirname(__FILE__)), '../../lib/image_searcher')
 
 describe PresentationsController do
   context "new action" do
@@ -30,14 +30,14 @@ describe PresentationsController do
     end
   
     it "show action should have presentation with id assigned" do
-      Presentation.should_receive(:find).with(1).and_return(@presentation)
+      Presentation.should_receive(:find).with('1').and_return(@presentation)
       get :show, :id  => 1
       assigns(:presentation).should_not be_nil
       assigns(:presentation).slides.should_not be_nil
     end
   
     it "show action should render show template" do
-      Presentation.should_receive(:find).with(1).and_return(@presentation)
+      Presentation.should_receive(:find).with('1').and_return(@presentation)
       get :show, :id => 1
       response.should render_template(:show)
     end

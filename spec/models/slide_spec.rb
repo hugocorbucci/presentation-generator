@@ -1,5 +1,5 @@
-require 'spec_helper'
-require 'lib/image_searcher'
+require File.join(File.expand_path(File.dirname(__FILE__)), '../spec_helper')
+require File.join(File.expand_path(File.dirname(__FILE__)), '../../lib/image_searcher')
 
 describe Slide do
   it "should be created with content" do
