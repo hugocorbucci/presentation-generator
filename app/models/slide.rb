@@ -1,6 +1,7 @@
 class Slide
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   field :image
   

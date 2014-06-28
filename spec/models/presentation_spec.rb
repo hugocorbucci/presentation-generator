@@ -7,28 +7,28 @@ describe Presentation do
     end
     
     it "should have empty content" do
-      @presentation.content.should be_blank
+      expect(@presentation.content).to be_blank
     end
     
     it "should have 0 slides" do
-      @presentation.slides.should be_empty
+      expect(@presentation.slides).to be_empty
     end
   end
   
   context "with one line content" do
     before :each do
-      engine = mock(ImageSearcher)
-      engine.should_receive(:get_image).and_return("http://www.image.com/image.png")
-      ImageSearcher.should_receive(:engine).and_return(engine)
+      engine = double(ImageSearcher)
+      expect(engine).to receive(:get_image).and_return("http://www.image.com/image.png")
+      expect(ImageSearcher).to receive(:engine).and_return(engine)
       @presentation = Presentation.new(:content => "silver bullet")
     end
     
     it "should have one line content" do
-      @presentation.content.should == "silver bullet"
+      expect(@presentation.content).to eq("silver bullet")
     end
     
     it "should have one slide" do
-      @presentation.slides.size.should == 1
+      expect(@presentation.slides).to have_exactly(1).items
     end
   end
 end

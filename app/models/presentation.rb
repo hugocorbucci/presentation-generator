@@ -1,9 +1,9 @@
 class Presentation
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
   
   embeds_many :slides
-  
   field :content
   
   def initialize(*params)

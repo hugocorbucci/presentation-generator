@@ -8,7 +8,7 @@ class IgnitesController < ApplicationController
   end
   
   def create
-    @ignite = Ignite.new(params[:ignite])
+    @ignite = Ignite.new(allowed_ignite_params)
     respond_to do |format|
       format.html {
         @ignite.save
@@ -19,5 +19,9 @@ class IgnitesController < ApplicationController
   
   def show
     @ignite = Ignite.find(params[:id])
+  end
+  private
+  def allowed_ignite_params
+    params.require(:ignite).permit(:content)
   end
 end
