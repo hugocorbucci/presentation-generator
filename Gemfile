@@ -19,8 +19,13 @@ group :development, :test do
  gem 'rspec'
  gem 'rspec-rails'
  gem 'rspec-collection_matchers'
- gem 'autotest'
- gem 'autotest-notification'
+ gem 'guard'
+ gem 'guard-rspec'
+ gem 'debugger'
+ gem 'pry'
+ gem 'rb-fsevent' if `uname` =~ /Darwin/
+ gem 'terminal-notifier-guard' if `uname` =~ /Darwin/
+ gem 'libnotify' if `uname` =~ /Linux/
  gem 'database_cleaner'
  gem 'mongoid-rspec'
  gem 'foreman'
