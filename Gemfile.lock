@@ -79,6 +79,8 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    libnotify (0.8.4)
+      ffi (>= 1.0.11)
     listen (2.8.3)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -203,6 +205,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   json
+  libnotify
   mongo_ext
   mongoid (~> 4.0)
   mongoid-rspec (= 2.0.0.rc1)

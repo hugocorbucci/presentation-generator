@@ -1,6 +1,14 @@
 source 'http://rubygems.org'
 ruby '1.9.3'
 
+def linux_only(require_as)
+  RbConfig::CONFIG['host_os'] =~ /linux/ ? require_as : false
+end
+# Mac OS X
+def darwin_only(require_as)
+  RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
+end
+
 gem 'rails', '4.1.8'
 gem 'rake'
 
@@ -23,9 +31,9 @@ group :development, :test do
  gem 'guard-rspec'
  gem 'debugger'
  gem 'pry'
- gem 'rb-fsevent' if `uname` =~ /Darwin/
- gem 'terminal-notifier-guard' if `uname` =~ /Darwin/
- gem 'libnotify' if `uname` =~ /Linux/
+ gem 'rb-fsevent', require: darwin_only('rb-fsevent')
+ gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
+ gem 'libnotify', require: linux_only('rb-inotify')
  gem 'database_cleaner'
  gem 'mongoid-rspec', '2.0.0.rc1'
  gem 'foreman'
