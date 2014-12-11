@@ -1,4 +1,4 @@
-Presentation Generator 
+Presentation Generator [![Build Status](https://snap-ci.com/hugocorbucci/presentation-generator/branch/master/build_image)](https://snap-ci.com/hugocorbucci/presentation-generator/branch/master) [![Dependency Status](https://gemnasium.com/hugocorbucci/presentation-generator.svg)](https://gemnasium.com/hugocorbucci/presentation-generator) [![Code Climate](https://codeclimate.com/github/hugocorbucci/presentation-generator/badges/gpa.svg)](https://codeclimate.com/github/hugocorbucci/presentation-generator) [![Test Coverage](https://codeclimate.com/github/hugocorbucci/presentation-generator/badges/coverage.svg)](https://codeclimate.com/github/hugocorbucci/presentation-generator)
 ======================
 
 The presentation generator hopes to help speaker build the basis for their talks.

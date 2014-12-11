@@ -21,7 +21,6 @@ group :development, :test do
  gem 'rspec-collection_matchers'
  gem 'autotest'
  gem 'autotest-notification'
- gem 'heroku'
  gem 'database_cleaner'
  gem 'mongoid-rspec'
  gem 'foreman'
