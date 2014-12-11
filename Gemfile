@@ -27,3 +27,7 @@ group :development, :test do
  gem 'foreman'
  gem 'sqlite3'
 end
+
+group :test do
+ gem 'codeclimate-test-reporter', require: nil
+end
