@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '4.1.8'
-gem 'rake', '10.3.2'
+gem 'rake'
 
 gem 'mongoid', "~> 4.0"
 gem 'mongo_ext'
@@ -27,7 +27,7 @@ group :development, :test do
  gem 'terminal-notifier-guard' if `uname` =~ /Darwin/
  gem 'libnotify' if `uname` =~ /Linux/
  gem 'database_cleaner'
- gem 'mongoid-rspec'
+ gem 'mongoid-rspec', '2.0.0.rc1'
  gem 'foreman'
  gem 'sqlite3'
 end
