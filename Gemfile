@@ -33,7 +33,7 @@ group :development, :test do
  gem 'pry'
  gem 'rb-fsevent', require: darwin_only('rb-fsevent')
  gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
- gem 'libnotify', require: linux_only('rb-inotify')
+ gem 'rb-inotify', require: linux_only('rb-inotify')
  gem 'database_cleaner'
  gem 'mongoid-rspec', '2.0.0.rc1'
  gem 'foreman'
