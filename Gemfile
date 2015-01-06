@@ -36,7 +36,7 @@ group :development, :test do
  gem 'rb-inotify', require: linux_only('rb-inotify')
  gem 'database_cleaner'
  gem 'mongoid-tree'
- gem 'mongoid-rspec', '2.0.0.rc1'
+ gem 'mongoid-rspec'
  gem 'foreman'
  gem 'sqlite3'
 end
