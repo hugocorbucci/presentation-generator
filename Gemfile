@@ -35,6 +35,7 @@ group :development, :test do
  gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
  gem 'rb-inotify', require: linux_only('rb-inotify')
  gem 'database_cleaner'
+ gem 'mongoid-tree'
  gem 'mongoid-rspec', '2.0.0.rc1'
  gem 'foreman'
  gem 'sqlite3'
