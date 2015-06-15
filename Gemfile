@@ -24,10 +24,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 
 group :development, :test do
- gem 'rspec'
  gem 'rspec-rails'
  gem 'rspec-collection_matchers'
- gem 'guard'
  gem 'guard-rspec'
  gem 'debugger'
  gem 'pry'
