@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '1.9.3'
+ruby '2.2.2'
 
 def linux_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /linux/ ? require_as : false
@@ -27,7 +27,7 @@ group :development, :test do
  gem 'rspec-rails'
  gem 'rspec-collection_matchers'
  gem 'guard-rspec'
- gem 'debugger'
+ gem 'byebug'
  gem 'pry'
  gem 'rb-fsevent', require: darwin_only('rb-fsevent')
  gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
