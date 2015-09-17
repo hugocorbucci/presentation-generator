@@ -12,7 +12,7 @@ end
 gem 'rails', '4.2.4'
 gem 'rake'
 
-gem 'mongoid', "~> 4.0"
+gem 'mongoid', "~> 5.0"
 gem 'mongo_ext'
 
 gem 'bundler'
