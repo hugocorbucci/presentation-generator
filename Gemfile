@@ -32,7 +32,7 @@ group :development, :test do
  gem 'rb-fsevent', require: darwin_only('rb-fsevent')
  gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
  gem 'rb-inotify', require: linux_only('rb-inotify')
- gem 'database_cleaner', '1.4.1' # Version 1.5.0 breaks truncation
+ gem 'database_cleaner'
  gem 'mongoid-rspec'
  gem 'foreman'
  gem 'sqlite3'
