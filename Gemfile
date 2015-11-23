@@ -4,6 +4,7 @@ ruby '2.2.2'
 def linux_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /linux/ ? require_as : false
 end
+
 # Mac OS X
 def darwin_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
@@ -12,7 +13,7 @@ end
 gem 'rails', '4.2.5'
 gem 'rake'
 
-gem 'mongoid', "~> 5.0"
+gem 'mongoid', '~> 5.0'
 gem 'mongo_ext'
 
 gem 'bundler'
@@ -24,20 +25,21 @@ gem 'uglifier'
 gem 'coffee-rails'
 
 group :development, :test do
- gem 'rspec-rails'
- gem 'rspec-collection_matchers'
- gem 'guard-rspec'
- gem 'byebug'
- gem 'pry'
- gem 'rb-fsevent', require: darwin_only('rb-fsevent')
- gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
- gem 'rb-inotify', require: linux_only('rb-inotify')
- gem 'database_cleaner'
- gem 'mongoid-rspec'
- gem 'foreman'
- gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
+  gem 'byebug'
+  gem 'pry'
+  gem 'rb-fsevent', require: darwin_only('rb-fsevent')
+  gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
+  gem 'rb-inotify', require: linux_only('rb-inotify')
+  gem 'database_cleaner'
+  gem 'mongoid-rspec'
+  gem 'foreman'
+  gem 'sqlite3'
 end
 
 group :test do
- gem 'codeclimate-test-reporter', require: nil
+  gem 'codeclimate-test-reporter', require: nil
 end
