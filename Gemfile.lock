@@ -103,7 +103,7 @@ GEM
     mongo (2.2.1)
       bson (~> 4.0)
     mongo_ext (0.19.3)
-    mongoid (5.0.1)
+    mongoid (5.0.2)
       activemodel (~> 4.0)
       mongo (~> 2.1)
       origin (~> 2.1)
