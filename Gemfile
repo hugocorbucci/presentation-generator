@@ -10,7 +10,7 @@ def darwin_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
 end
 
-gem 'rails', '4.2.5'
+gem 'rails', '~> 4.2'
 gem 'rake'
 
 gem 'mongoid', '~> 5.0'
