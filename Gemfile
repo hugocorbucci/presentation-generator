@@ -10,7 +10,7 @@ def darwin_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
 end
 
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 4.2' # TODO: Need to upgrade mongoid to 6 prior to rails 5
 gem 'rake'
 
 gem 'mongoid', '~> 5.0'
