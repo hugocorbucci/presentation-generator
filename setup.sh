@@ -23,4 +23,4 @@ fi
 mkdir -p ${MY_DIR}/tmp &> /dev/null
 
 echo "Installing dependencies..."
-bundle &> /dev/null
+bundle install &> /dev/null

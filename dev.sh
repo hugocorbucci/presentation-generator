@@ -11,6 +11,5 @@ if [[ ! -f ${MY_DIR}/.env ]] || [[ -z `cat ${MY_DIR}/.env | grep SECRET_KEY_BASE
   printf "SECRET_KEY_BASE=`bundle exec rake secret`\n" >> ${MY_DIR}/.env
 fi
 
-echo "Installing updated dependencies..."
-bundle install
+echo "Running processes..."
 bundle exec foreman start -f Procfile.dev
