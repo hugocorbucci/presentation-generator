@@ -10,10 +10,10 @@ def darwin_only(require_as)
   RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
 end
 
-gem 'rails', '~> 4.2' # TODO: Need to upgrade mongoid to 6 prior to rails 5
+gem 'rails', '~> 5.0'
 gem 'rake'
 
-gem 'mongoid', '~> 5.0'
+gem 'mongoid', '~> 6.0'
 gem 'mongo_ext'
 
 gem 'bundler'
@@ -35,7 +35,6 @@ group :development, :test do
   gem 'terminal-notifier-guard', require: darwin_only('terminal-notifier-guard')
   gem 'rb-inotify', require: linux_only('rb-inotify')
   gem 'database_cleaner'
-  gem 'mongoid-rspec'
   gem 'foreman'
   gem 'sqlite3'
 end

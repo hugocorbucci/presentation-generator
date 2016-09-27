@@ -1,7 +1,7 @@
 # Controller to create new presentations, index and show them
 class PresentationsController < ApplicationController
   def new
-    @presentation = Presentation.new(params[:presentation])
+    @presentation = Presentation.new(new_presentation_params)
   end
 
   def index
@@ -9,7 +9,7 @@ class PresentationsController < ApplicationController
   end
 
   def create
-    @presentation = Presentation.new(params[:presentation])
+    @presentation = Presentation.new(create_presentation_params)
     respond_to do |format|
       format.html { render_page }
       format.js { render_json }
@@ -22,8 +22,16 @@ class PresentationsController < ApplicationController
 
   private
 
+  def new_presentation_params
+    params.permit(:presentation)
+  end
+
+  def create_presentation_params
+    params.require(:presentation).permit(:content, :preview)
+  end
+
   def render_page
-    if params[:presentation][:preview]
+    if create_presentation_params[:preview]
       render :new
     else
       @presentation.save
