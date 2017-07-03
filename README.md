@@ -1,5 +1,7 @@
-Presentation Generator [![Build Status](https://snap-ci.com/hugocorbucci/presentation-generator/branch/master/build_image)](https://snap-ci.com/hugocorbucci/presentation-generator/branch/master) [![Dependency Status](https://gemnasium.com/hugocorbucci/presentation-generator.svg)](https://gemnasium.com/hugocorbucci/presentation-generator) [![Code Climate](https://codeclimate.com/github/hugocorbucci/presentation-generator/badges/gpa.svg)](https://codeclimate.com/github/hugocorbucci/presentation-generator) [![Test Coverage](https://codeclimate.com/github/hugocorbucci/presentation-generator/badges/coverage.svg)](https://codeclimate.com/github/hugocorbucci/presentation-generator)
+Presentation Generator
 ======================
 
-The presentation generator hopes to help speaker build the basis for their talks.
-It will receive bullet points, transform each of them in a slide, finds the top image for the keywords of that sentence and scales it to match the slide size. This basis will allow people to quick arrange a start for a presentation and improve over that.
+This project is deprecated. It was heavily based on google image search API which was removed.
+
+It used to to help speakers build the basis for their talks.
+It received bullet points, transformed each of them in a slide, searched for the top image for the keywords of that sentence and scaled it to match the slide size. It could be used as the basis to allow people to quickly arrange a start for a presentation and improve over that.
